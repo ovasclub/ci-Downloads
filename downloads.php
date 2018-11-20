@@ -164,7 +164,7 @@ if (isset($_GET['download_id'])) {
             $data['download_copyright'] = $data['download_copyright'] ? $data['download_copyright'] : $locale['na'];
             if ($data['download_homepage']) {
                 $urlprefix = (!strstr($data['download_homepage'], "http://") && !strstr($data['download_homepage'], "https://")) ? 'http://' : '';
-                $data['download_homepage'] = "<a href='".$urlprefix.$data['download_homepage']."' title='".$urlprefix.$data['download_homepage']."' target='_blank'>".$locale['download_1018']."</a>\n";
+                $data['download_homepage'] = "<a href='".$urlprefix.$data['download_homepage']."' title='".$urlprefix.$data['download_homepage']."' target='_blank'>".$data['download_homepage']."</a>\n";
             } else {
                 $data['download_homepage'] = $locale['na'];
             }
@@ -443,3 +443,4 @@ function parseInfo($data) {
         'download_file_link'         => file_exists(DOWNLOADS.'files/'.$data['download_file']) ? INFUSIONS."downloads/downloads.php?file_id=".$data['download_id'] : '',
     ];
 }
+
